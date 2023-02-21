@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript Quiz</title>
+    <link rel="stylesheet" href="./Assets/style.css"/>
+</head>
+<body id="body">
+    <header class="quizHeader">
+            <h1 class="highScores">View Highscores</h1>
+            <h1 class="currentScore">Current Score:</h1>
+            <h2 class="timer">Timer:<span id="countdown"></span></h2>
+    </header>
+
+    <main class="quizContainer"> 
+            <h1 id="question">Question: </h1>
+                <ol class="answers">
+                    <li class="A" data-let="A"></li>
+                    <li class="B" data-let="B"></li>
+                    <li class="C" data-let="C"></li>
+                    <li class="D" data-let="D"></li>
+                </ol>
+    </main>
+    <section>
+        <button id="startBtn">Start Quiz</button>
+
+    <h2 class="output"></h2>
+    </section>
+
+    
+<script src="./Assets/script.js"></script>
+</body>
+</html>

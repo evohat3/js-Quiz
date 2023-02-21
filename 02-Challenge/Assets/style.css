@@ -1,0 +1,33 @@
+body {
+    display: block;
+}
+
+header {
+    display: none;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1%;
+    border-style: solid;
+    margin-bottom: 10px;
+    border-radius: 10px;
+}
+
+main {
+    display: none;
+    justify-content: space-between;
+    padding: 1%;
+    border-style: solid;
+    border-radius: 10px;
+
+}
+
+.output {
+    display: none;
+}
+
+#startBtn {
+    padding: 1%;
+    margin-left: 50%;
+    margin-top: 25%;
+
+}
