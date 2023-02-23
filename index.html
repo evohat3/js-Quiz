@@ -4,32 +4,86 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Javascript Quiz</title>
-    <link rel="stylesheet" href="./Assets/style.css"/>
+    <title>Web Quiz</title>
+    <link rel="stylesheet" href="./Assets/style.css">
 </head>
-<body id="body">
-    <header class="quizHeader">
-            <h1 class="highScores">View Highscores</h1>
-            <h1 class="currentScore">Current Score:</h1>
-            <h2 class="timer">Timer:<span id="countdown"></span></h2>
-    </header>
+    <body>
+        <!-- main outer div-->
+        <div class="outerBox">
+        <!-- Top Bar div-->
+            <div class="topBar" id="topBar"> 
+                <button id="tbBttn">View Highscores</button>
+                <p id="timer"></p>
+            </div>
+        <!-- Inner Div  -->        
+                <div class="innerBox">
+                    
+                    <!-- -------------- -->
+                    <!-- *** PART 1 *** -->
+                    <!-- -------------- -->
 
-    <main class="quizContainer"> 
-            <h1 id="question">Question: </h1>
-                <ol class="answers">
-                    <li class="A" data-let="A"></li>
-                    <li class="B" data-let="B"></li>
-                    <li class="C" data-let="C"></li>
-                    <li class="D" data-let="D"></li>
-                </ol>
-    </main>
-    <section>
-        <button id="startBtn">Start Quiz</button>
+        <!-- Main header/ quiz intro -->            
+                    <header class="quizIntro" id="quizIntro">
+                        <h1>Welcome to Logic Central!</h1>
+                        <p>This is a timed assessment.</p>
+                        <button id="startBtn">Start Quiz!</button>
+                    </header>
+        <!-- main quiz content -->
+                    <main>
 
-    <h2 class="output"></h2>
-    </section>
+                    <!-- -------------- -->
+                    <!-- --- PART 2 --- -->
+                    <!-- Questions box --->
+                    <!-- -------------- -->
+                        <section class="questionBox" id="questionBox">
+                            <!-- Generate question in JS -->
+                            <h2 id="question"></h2>
+                            <ol id="choices">
+                                <!-- Generate answer choices in JS -->
+                            </ol>
+                            <span id="span"></span>
+                        </section>
 
-    
-<script src="./Assets/script.js"></script>
-</body>
+                    <!-- -------------- -->
+                    <!-- ----PART 3----  -->
+                    <!-- Finished Box  -->
+                    <!-- -------------- -->
+
+                    <section class="endQuiz">
+                        <h1>Quiz finished!</h1>
+                        <p>your score: 00</p>
+                        
+                        <form>
+                            <label for="initials">Enter your initials:</label>
+                            <input type="text" id="initials" />
+                            <button type="submit" id="submit-score">Submit Score</button>
+                        </form>
+                    </section>
+
+                    <!-- -------------- -->
+                    <!-- High Scores -- -->
+                    <!-- -------------- -->
+
+                    <section class="highScores">
+                        <h1>High Scores</h1>
+                        <ol>
+                            <!-- Generate in JS -->
+                            <li>np - 50 </li>
+                            <li>rp - 20 </li>
+                        </ol>
+                        
+                        <button id="back-btn">Go Back</button>
+                        <button id="clear-btn">Clear Scores</button>
+                    </section>
+
+
+                    </main>
+
+                </div>
+
+           
+
+        </div>
+        <script src="./Assets/script.js"></script>
+    </body>
 </html>
