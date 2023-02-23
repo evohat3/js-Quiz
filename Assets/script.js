@@ -39,7 +39,7 @@ var quizQuestions = [
       question: "What is an Object?",
       choices: ["An element", "Something with Properties", "A function", "A Selector"],
       answer: "Something with Properties"
-    }
+    },
 
   ];
 // ----------------- Questions ---------------------- //
@@ -80,19 +80,24 @@ function answerSelector(event) {
     
     // display "Correct!" next to the button
     var correctMsg = document.getElementById("span");
+    if (correctMsg) {
     correctMsg.textContent = "Correct!";
     selectedChoice.parentNode.insertBefore(correctMsg, selectedChoice.nextSibling);
-    
-    nextQuestion();
-    nextChoices();
+    }
+    setTimeout(function() {
+      nextQuestion();
+      nextChoices();
+    }, 1000);
     
   }  else {
     // set the background color of the button to red
     selectedChoice.style.backgroundColor = 'red';
     // display "Incorrect!" next to the button
     var incorrectMsg = document.getElementById("span");
+    if (incorrectMsg) {
     incorrectMsg.textContent = "Incorrect!";
   selectedChoice.parentNode.insertBefore(incorrectMsg, selectedChoice.nextSibling);
+    }
   reduceTimerBy10Seconds();
 
   }
