@@ -9,21 +9,21 @@
 </head>
     <body>
         <!-- main outer div-->
-        <div class="outerBox">
+        <div class="outerBox horizontal-center">
         <!-- Top Bar div-->
-            <div class="topBar" id="topBar"> 
+            <div class="topBar horizontal-center" id="topBar"> 
                 <button id="tbBttn">View Highscores</button>
                 <p id="timer"></p>
             </div>
         <!-- Inner Div  -->        
-                <div class="innerBox">
+                <div class="innerBox horizontal-center">
                     
                     <!-- -------------- -->
                     <!-- *** PART 1 *** -->
                     <!-- -------------- -->
 
         <!-- Main header/ quiz intro -->            
-                    <header class="quizIntro" id="quizIntro">
+                    <header class="quizIntro horizontal-center" id="quizIntro">
                         <h1>Welcome to Logic Central!</h1>
                         <p>This is a timed assessment.</p>
                         <button id="startBtn">Start Quiz!</button>
@@ -35,10 +35,10 @@
                     <!-- --- PART 2 --- -->
                     <!-- Questions box --->
                     <!-- -------------- -->
-                        <section class="questionBox" id="questionBox">
+                        <section class="questionBox horizontal-center" id="questionBox">
                             <!-- Generate question in JS -->
-                            <h2 id="question"></h2>
-                            <ol id="choices">
+                            <h2 class='horizontal-center' id="question"></h2>
+                            <ol class="horizontal-center" id="choices">
                                 <!-- Generate answer choices in JS -->
                             </ol>
                             <span id="span"></span>
@@ -49,7 +49,7 @@
                     <!-- Finished Box  -->
                     <!-- -------------- -->
 
-                    <section class="endQuiz">
+                    <section class="endQuiz horizontal-center">
                         <h1>Quiz finished!</h1>
                         <p>your score: 00</p>
                         
@@ -61,12 +61,29 @@
                     </section>
 
                     <!-- -------------- -->
+                    <!-- --PART 3 ALT-- -->
+                    <!-- ---TIMES UP--- -->
+                    <!-- -------------- -->
+
+                    <section id="timesUp" class="horizontal-center">
+                        <h1>Times Up!</h1>
+                        <p>your score: 00</p>
+                        
+                        <form>
+                            <label for="initials">Enter your initials:</label>
+                            <input type="text" id="initials" />
+                            <button type="submit" id="submit-score">Submit Score</button>
+                        </form>
+
+                    </section>
+
+                    <!-- -------------- -->
                     <!-- High Scores -- -->
                     <!-- -------------- -->
 
-                    <section class="highScores">
+                    <section class="highScores horizontal-center">
                         <h1>High Scores</h1>
-                        <ol>
+                        <ol class="horizontal-center">
                             <!-- Generate in JS -->
                             <li>np - 50 </li>
                             <li>rp - 20 </li>

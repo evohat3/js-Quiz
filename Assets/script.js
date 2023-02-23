@@ -10,7 +10,7 @@
 
 // ----------------- LIGHTS ---------------------- //
 // ----------------- Global ---------------------- //
-var time = 60;
+var timeRemaining = 60;
 var currentQuestionIndex = 0;
 var startBttn = document.getElementById('startBtn');
 var quizIntro = document.querySelector('header.quizIntro')
@@ -91,10 +91,12 @@ function answerSelector(event) {
     var incorrectMsg = document.getElementById("span");
     incorrectMsg.textContent = "Incorrect!";
   selectedChoice.parentNode.insertBefore(incorrectMsg, selectedChoice.nextSibling);
-
-
+  reduceTimerBy10Seconds();
   }
 }
+
+
+
 // ------- Answer selection --------- //
 
 
@@ -112,6 +114,7 @@ function checkHighScore() {
 // TODO ends quiz and shows finished Box
 // TODO when timer runs out, ends quiz
 function endQuiz () {
+  
 }
 // ------- End The Quiz  --------- //
 
@@ -134,10 +137,9 @@ function displayChoices() {
 }
 /* ----------- DISPLAY ANSWER CHOICES ----------------- */
 
-/* ----------- TIMER ----------------- */
+/* ----------- TIMER STUFF ----------------- */
 function timer () {
     var timer = document.getElementById('timer')
-    var timeRemaining = 60;
     var timerInterval = setInterval(function() {
         timeRemaining--;
         timer.textContent = timeRemaining + ' Seconds Left';
@@ -149,6 +151,12 @@ function timer () {
       }, 1000);
     }
 
+
+function reduceTimerBy10Seconds() {
+      timeRemaining -= 10;
+      var timer = document.getElementById('timer');
+      timer.textContent = time + ' Seconds Left';
+    }
 // ----------- TIMER ----------------- //
 // ----------------- CAMERA ---------------------- //
 

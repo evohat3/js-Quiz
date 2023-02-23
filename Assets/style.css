@@ -88,6 +88,7 @@ h1, h2 {
 
 .topBar p {
     float: right;
+    margin-top: -10%;
     
     /* debugger
     background-color: black;*/
@@ -113,11 +114,11 @@ h1, h2 {
 /* <header> quiz-intro section */
 /* ---------------- */
 
+
+
 .quizIntro, main {
-
-
     background-color: darkgreen;
-    margin-bottom: 30vh;
+    margin-bottom: 10vh;
     margin-left: 10%;
     margin-right: 10%;
     text-align: center;
@@ -192,6 +193,13 @@ ol button:hover {
     padding: 20px;
 }
 
+/* ----------------- */
+/* ----times up---- */
+/* ----------------- */
+
+#timesUp {
+    display:none;
+}
 
 .endQuiz button {
     margin: 10px auto   
@@ -209,4 +217,18 @@ ol button:hover {
 
 .highScores button {
     margin: 5px auto;
+}
+
+
+/* ------------- */
+/* Media Queries */
+/* ------------- */
+
+@media screen and (max-width: 813px) {
+
+    .horizontal-center {
+        width: 80%;
+        height: 80%;
+    }
+
 }
