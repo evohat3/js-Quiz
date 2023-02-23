@@ -11,11 +11,12 @@
 // ----------------- LIGHTS ---------------------- //
 // ----------------- Global ---------------------- //
 var timeRemaining = 60;
+var currentChoiceIndex = 0;
 var currentQuestionIndex = 0;
 var startBttn = document.getElementById('startBtn');
 var quizIntro = document.querySelector('header.quizIntro')
 var choicesList = document.getElementById("choices");
-choicesList.innerHTML = "";
+
 // ----------------- Global ---------------------- //
 // ----------------- Questions ---------------------- //
 var quizQuestions = [
@@ -80,10 +81,11 @@ function answerSelector(event) {
     // display "Correct!" next to the button
     var correctMsg = document.getElementById("span");
     correctMsg.textContent = "Correct!";
-
     selectedChoice.parentNode.insertBefore(correctMsg, selectedChoice.nextSibling);
-
-    // move on to the next question after a brief pause
+    
+    nextQuestion();
+    nextChoices();
+    
   }  else {
     // set the background color of the button to red
     selectedChoice.style.backgroundColor = 'red';
@@ -92,11 +94,9 @@ function answerSelector(event) {
     incorrectMsg.textContent = "Incorrect!";
   selectedChoice.parentNode.insertBefore(incorrectMsg, selectedChoice.nextSibling);
   reduceTimerBy10Seconds();
+
   }
 }
-
-
-
 // ------- Answer selection --------- //
 
 
@@ -114,7 +114,6 @@ function checkHighScore() {
 // TODO ends quiz and shows finished Box
 // TODO when timer runs out, ends quiz
 function endQuiz () {
-  
 }
 // ------- End The Quiz  --------- //
 
@@ -129,6 +128,7 @@ function displayQuestion() {
 /* ----------- DISPLAY ANSWER CHOICES ----------------- */
 function displayChoices() {
     var currentQuestion = quizQuestions[currentQuestionIndex];
+    choicesList.innerHTML = "";
     for (var i = 0; i < currentQuestion.choices.length; i++) {
       var choiceElement = document.createElement("button");
       choiceElement.textContent = currentQuestion.choices[i];
@@ -137,7 +137,39 @@ function displayChoices() {
 }
 /* ----------- DISPLAY ANSWER CHOICES ----------------- */
 
-/* ----------- TIMER STUFF ----------------- */
+/* ----------- Next Question ----------------- */
+function nextQuestion() {
+  // increment the current question index
+  currentQuestionIndex++;
+
+
+  // check if all questions have been answered
+  if (currentQuestionIndex >= quizQuestions.length) {
+    // display the quiz results
+    displayQuizResults();
+  } else {
+    // display the next question
+    displayQuestion();
+  }
+}
+/* ----------- Next Question ----------------- */
+
+function nextChoices() {
+  currentChoiceIndex++;
+
+    // check if all questions have been answered
+    if (currentChoiceIndex >= quizQuestions[currentQuestionIndex].choices.length) {
+      // display the quiz results
+      displayQuizResults();
+    } else {
+      // display the next question
+      displayChoices();
+  }
+}
+
+
+
+/* ----------- TIMER ----------------- */
 function timer () {
     var timer = document.getElementById('timer')
     var timerInterval = setInterval(function() {
@@ -151,12 +183,12 @@ function timer () {
       }, 1000);
     }
 
-
-function reduceTimerBy10Seconds() {
+    function reduceTimerBy10Seconds() {
       timeRemaining -= 10;
       var timer = document.getElementById('timer');
-      timer.textContent = time + ' Seconds Left';
+      timer.textContent = timeRemaining + ' Seconds Left';
     }
+
 // ----------- TIMER ----------------- //
 // ----------------- CAMERA ---------------------- //
 

@@ -88,10 +88,9 @@ h1, h2 {
 
 .topBar p {
     float: right;
-    margin-top: -10%;
     
-    /* debugger
-    background-color: black;*/
+    /*
+    background-color: white;*/
 }
 
 /* ---------------- */
