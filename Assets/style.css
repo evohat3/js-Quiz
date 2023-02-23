@@ -1,33 +1,212 @@
-body {
-    display: block;
+/* ---------------- */
+/* Global default settings */
+/* ---------------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color:white;
+    /* debugger  outlines the containers */
+    /*
+    border: 1px solid lightgreen;
+    */
+
+    /* Default font */
+    font-family: sans-serif;
 }
 
-header {
+body {
+    background-color: black;
+}
+
+p {
+    color:white;
+    font-size: 30px;
+}
+
+li {
+    list-style: none;
+}
+
+button {
+    display: block;
+    font-weight: 900;
+    padding: 10px 15px;
+    border-radius: 10px;
+    background-color: black;
+    color: white;
+    font-size: 1rem;
+}
+
+span {
+    margin-right: 60%;
+    display: block;
+    font-weight: 900;
+    padding: 10px 15px;
+    border-radius: 10px;
+    font-size: 1rem;
+}
+
+h1, h2 {
+    color: white;
+}
+
+
+/* ----------------
+    Outer Box 
+ ---------------- */
+.outerBox {
+    padding: 10px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+}
+
+/* ---------------- 
+    Top Bar 
+ ---------------- */
+
+  
+
+.topBar {
+    
     display: none;
+
+
+    margin-bottom: 10px;
+    
+/*debug*
+    background-color: aquamarine;
+*/    
+    
+}
+
+#tbBttn {
+    background-color: darkgreen;
+}
+
+.topBar p {
+    float: right;
+    
+    /* debugger
+    background-color: black;*/
+}
+
+/* ---------------- */
+/* Inner Box  */
+/* ---------------- */
+
+.innerBox {
+    background-color: black;
+    height: 100%;
+    width: 50%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+
+}
+
+/* ---------------- */
+/* <header> quiz-intro section */
+/* ---------------- */
+
+.quizIntro, main {
+
+
+    background-color: darkgreen;
+    margin-bottom: 30vh;
+    margin-left: 10%;
+    margin-right: 10%;
+    text-align: center;
+}
+
+.quizIntro h1, p , button {
+    margin: 50px;
+}
+
+.quizIntro p {
+    text-align: center;
+}
+
+.quizIntro button {
+display: block;
+margin: 0 auto;
+margin-bottom: 20px;
+}
+
+
+/* ---------------- */
+/* <Main> quiz content */
+/* ---------------- */
+
+
+main {
+display: block
+}
+
+/* ----------------- */
+/* -- questionBox -- */
+/* ----------------- */
+
+.questionBox {
+    display: none;
+    padding: 20px;
+
+}
+
+h2#question {
+margin-bottom: 10px;
+}
+
+ol button {
     justify-content: space-between;
     align-items: center;
     padding: 1%;
-    border-style: solid;
     margin-bottom: 10px;
-    border-radius: 10px;
-}
-
-main {
-    display: none;
-    justify-content: space-between;
-    padding: 1%;
     border-style: solid;
+    border-color: black;
     border-radius: 10px;
-
+    max-width:fit-content;
+    color: white;
+    background-color:black;
+    transform: scale(1);
 }
 
-.output {
+ol button:hover {
+    transform: scale(1.1);
+}
+
+/* ----------------- */
+/* ------ Fin ------ */
+/* ----------------- */
+
+.endQuiz {
+    
     display: none;
+  /*  
+    display: flexbox;
+*/
+    padding: 20px;
 }
 
-#startBtn {
-    padding: 1%;
-    margin-left: 50%;
-    margin-top: 25%;
 
+.endQuiz button {
+    margin: 10px auto   
+}
+
+/* ----------------- */
+/* --- highScores --- */
+/* ----------------- */
+
+.highScores {
+
+    display: none;
+    flex-direction: column;
+}
+
+.highScores button {
+    margin: 5px auto;
 }
